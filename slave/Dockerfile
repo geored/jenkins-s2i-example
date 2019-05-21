@@ -1,5 +1,5 @@
 # The FROM will be replaced when building in OpenShift
-FROM rhel7/rhel
+FROM registry.redhat.io/rhel7/rhel
 
 MAINTAINER Siamak Sadeghianfar <ssadeghi@redhat.com>
 
