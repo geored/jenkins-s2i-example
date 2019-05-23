@@ -11,7 +11,8 @@ RUN yum-config-manager --enable rhel-7-server-rpms
 RUN yum-config-manager --enable rhel-7-server-ose-3.2-rpms
 RUN export INSTALL_PKGS="nss_wrapper java-1.8.0-openjdk-headlessjava-1.8.0-openjdk-devel nss_wrapper gettext tar git"
 # RUN yum clean all
-RUN yum update -y && yum repolist all
+RUN yum install -y yum-utils
+RUN prepare-yum-repositories rhel-server-rhscl-7-rpms
 RUN yum install -y --setopt=tsflags=nodocs install $INSTALL_PKGS
 RUN rpm -V $INSTALL_PKGS
 # RUN yum clean all
